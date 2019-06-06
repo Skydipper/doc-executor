@@ -1,0 +1,459 @@
+[
+  {
+    "id": "06c44f9a-aae7-401e-874c-de13b7764959",
+    "type": "dataset",
+    "attributes": {
+      "name": "Historical Precipitation -- U.S. (Puget Sound Lowlands)",
+      "slug": "Historical-Precipitation-US-Puget-Sound-Lowlands-1490086842133",
+      "type": "tabular",
+      "subtitle": null,
+      "application": [
+        "prep"
+      ],
+      "dataPath": null,
+      "attributesPath": null,
+      "connectorType": "document",
+      "provider": "csv",
+      "userId": "586bc76036aacd381cb92b3a",
+      "connectorUrl": "https://raw.githubusercontent.com/fgassert/PREP-washington-observed-data/master/observed_precip.csv",
+      "tableName": "index_06c44f9aaae7401e874cde13b7764959",
+      "status": "saved",
+      "published": false,
+      "overwrite": false,
+      "verified": false,
+      "blockchain": {},
+      "mainDateField": null,
+      "env": "production",
+      "geoInfo": false,
+      "protected": false,
+      "legend": {
+        "date": [],
+        "region": [],
+        "country": [],
+        "nested": []
+      },
+      "clonedHost": {},
+      "errorMessage": null,
+      "taskId": null,
+      "updatedAt": "2018-01-05T18:15:23.266Z",
+      "dataLastUpdated": null,
+      "widgetRelevantProps": [],
+      "layerRelevantProps": []
+    }
+  },
+  {
+    "id": "125b181c-653a-4a27-8a5f-e507c5a7c530",
+    "type": "dataset",
+    "attributes": {
+      "name": "Social Vulnerability Index (2006-2010) -- U.S. (Minnesota)",
+      "slug": "Social-Vulnerability-Index-2006-2010-US-Minnesota-1490086842544",
+      "type": "tabular",
+      "subtitle": null,
+      "application": [
+        "prep"
+      ],
+      "dataPath": null,
+      "attributesPath": null,
+      "connectorType": "rest",
+      "provider": "featureservice",
+      "userId": "586bc76036aacd381cb92b3a",
+      "connectorUrl": "https://coast.noaa.gov/arcgis/rest/services/sovi/sovi_tracts2010/MapServer/16?f=pjson",
+      "tableName": "sovisovi_tracts2010MapServer16",
+      "status": "saved",
+      "published": false,
+      "overwrite": false,
+      "verified": false,
+      "blockchain": {},
+      "mainDateField": null,
+      "env": "production",
+      "geoInfo": false,
+      "protected": false,
+      "legend": {
+        "date": [],
+        "region": [],
+        "country": [],
+        "nested": []
+      },
+      "clonedHost": {},
+      "errorMessage": null,
+      "taskId": null,
+      "updatedAt": "2017-12-01T22:17:17.678Z",
+      "dataLastUpdated": null,
+      "widgetRelevantProps": [],
+      "layerRelevantProps": []
+    }
+  },
+  {
+    "id": "0706f039-b929-453e-b154-7392123ae99e",
+    "type": "dataset",
+    "attributes": {
+      "name": "Social Vulnerability Index (2006-2010) -- U.S. (New Hampshire)",
+      "slug": "Social-Vulnerability-Index-2006-2010-US-New-Hampshire-1490086842541",
+      "type": "tabular",
+      "subtitle": null,
+      "application": [
+        "prep"
+      ],
+      "dataPath": null,
+      "attributesPath": null,
+      "connectorType": "rest",
+      "provider": "featureservice",
+      "userId": "586bc76036aacd381cb92b3a",
+      "connectorUrl": "https://coast.noaa.gov/arcgis/rest/services/sovi/sovi_tracts2010/MapServer/19?f=pjson",
+      "tableName": "sovisovi_tracts2010MapServer19",
+      "status": "saved",
+      "published": false,
+      "overwrite": false,
+      "verified": false,
+      "blockchain": {},
+      "mainDateField": null,
+      "env": "production",
+      "geoInfo": false,
+      "protected": false,
+      "legend": {
+        "date": [],
+        "region": [],
+        "country": [],
+        "nested": []
+      },
+      "clonedHost": {},
+      "errorMessage": null,
+      "taskId": null,
+      "updatedAt": "2017-12-01T22:17:59.585Z",
+      "dataLastUpdated": null,
+      "widgetRelevantProps": [],
+      "layerRelevantProps": []
+    }
+  },
+  {
+    "id": "098b33df-6871-4e53-a5ff-b56a7d989f9a",
+    "type": "dataset",
+    "attributes": {
+      "name": "Subnational Political Boundaries",
+      "slug": "Politcial-Boundaries-GADM-adminitrative-level-1-1490086842541",
+      "type": "tabular",
+      "subtitle": "GADM",
+      "application": [
+        "aqueduct",
+        "gfw",
+        "rw",
+        "forest-atlas",
+        "data4sdgs",
+        "gfw-climate",
+        "prep"
+      ],
+      "dataPath": null,
+      "attributesPath": null,
+      "connectorType": "rest",
+      "provider": "cartodb",
+      "userId": "57a0aa1071e394dd32ffe137",
+      "connectorUrl": "https://wri-01.carto.com/tables/gadm28_adm1/public",
+      "tableName": "gadm28_adm1",
+      "status": "saved",
+      "published": true,
+      "overwrite": false,
+      "verified": false,
+      "blockchain": {},
+      "subscribable": {},
+      "mainDateField": null,
+      "env": "production",
+      "geoInfo": true,
+      "protected": true,
+      "legend": {
+        "date": [],
+        "region": [],
+        "country": [],
+        "nested": []
+      },
+      "clonedHost": {},
+      "errorMessage": null,
+      "taskId": null,
+      "updatedAt": "2018-11-21T13:54:56.285Z",
+      "dataLastUpdated": null,
+      "widgetRelevantProps": [
+        "iso",
+        "name_1",
+        "type_1",
+        "shape_area",
+        "area_ha"
+      ],
+      "layerRelevantProps": [
+        "the_geom",
+        "the_geom_webmercator"
+      ]
+    }
+  },
+  {
+    "id": "0c630feb-8146-4fcc-a9be-be5adcb731c8",
+    "type": "dataset",
+    "attributes": {
+      "name": "USGS Land Cover - Impervious Surface (2001) -- U.S. (Alaska)",
+      "slug": "USGS-Land-Cover-Impervious-Surface-2001-US-Alaska-1490086842439",
+      "type": "raster",
+      "subtitle": null,
+      "application": [
+        "prep"
+      ],
+      "dataPath": null,
+      "attributesPath": null,
+      "connectorType": "wms",
+      "provider": "wms",
+      "userId": "586bc76036aacd381cb92b3a",
+      "connectorUrl": "https://raster.nationalmap.gov/arcgis/rest/services/LandCover/USGS_EROS_LandCover_NLCD/MapServer/25?f=pjson",
+      "tableName": "LandCoverUSGS_EROS_LandCover_NLCDMapServer25",
+      "status": "saved",
+      "published": false,
+      "overwrite": false,
+      "verified": false,
+      "blockchain": {},
+      "mainDateField": null,
+      "env": "production",
+      "geoInfo": false,
+      "protected": false,
+      "legend": {
+        "date": [],
+        "region": [],
+        "country": [],
+        "nested": []
+      },
+      "clonedHost": {},
+      "errorMessage": null,
+      "taskId": null,
+      "updatedAt": "2018-01-03T17:36:18.509Z",
+      "dataLastUpdated": null,
+      "widgetRelevantProps": [],
+      "layerRelevantProps": []
+    }
+  },
+  {
+    "id": "0f6c1472-0c16-4ffb-8313-2468d941f52c",
+    "type": "dataset",
+    "attributes": {
+      "name": "Coastal Energy Facilities (2012) -- U.S.",
+      "slug": "Coastal-Energy-Facilities-2012-US-1490086842532",
+      "type": "tabular",
+      "subtitle": null,
+      "application": [
+        "prep"
+      ],
+      "dataPath": null,
+      "attributesPath": null,
+      "connectorType": "rest",
+      "provider": "featureservice",
+      "userId": "586bc76036aacd381cb92b3a",
+      "connectorUrl": "https://coast.noaa.gov/arcgis/rest/services/MarineCadastre/OceanEnergy/MapServer/0?f=pjson",
+      "tableName": "MarineCadastreOceanEnergyMapServer0",
+      "status": "saved",
+      "published": false,
+      "overwrite": false,
+      "verified": false,
+      "blockchain": {},
+      "mainDateField": null,
+      "env": "production",
+      "geoInfo": false,
+      "protected": false,
+      "legend": {
+        "date": [],
+        "region": [],
+        "country": [],
+        "nested": []
+      },
+      "clonedHost": {},
+      "errorMessage": null,
+      "taskId": null,
+      "updatedAt": "2017-12-01T22:24:46.146Z",
+      "dataLastUpdated": null,
+      "widgetRelevantProps": [],
+      "layerRelevantProps": []
+    }
+  },
+  {
+    "id": "06ef7a04-eef3-42a9-8356-f9fb927909ce",
+    "type": "dataset",
+    "attributes": {
+      "name": "Social Vulnerability Index (2006-2010) -- U.S. (Indiana)",
+      "slug": "Social-Vulnerability-Index-2006-2010-US-Indiana-1490086842536",
+      "type": "tabular",
+      "subtitle": null,
+      "application": [
+        "prep"
+      ],
+      "dataPath": null,
+      "attributesPath": null,
+      "connectorType": "rest",
+      "provider": "featureservice",
+      "userId": "586bc76036aacd381cb92b3a",
+      "connectorUrl": "https://coast.noaa.gov/arcgis/rest/services/sovi/sovi_tracts2010/MapServer/10?f=pjson",
+      "tableName": "sovisovi_tracts2010MapServer10",
+      "status": "saved",
+      "published": false,
+      "overwrite": false,
+      "verified": false,
+      "blockchain": {},
+      "mainDateField": null,
+      "env": "production",
+      "geoInfo": false,
+      "protected": false,
+      "legend": {
+        "date": [],
+        "region": [],
+        "country": [],
+        "nested": []
+      },
+      "clonedHost": {},
+      "errorMessage": null,
+      "taskId": null,
+      "updatedAt": "2017-12-01T22:17:31.040Z",
+      "dataLastUpdated": null,
+      "widgetRelevantProps": [],
+      "layerRelevantProps": []
+    }
+  },
+  {
+    "id": "03a8da41-d8d0-4095-8fd5-267a25d5fc31",
+    "type": "dataset",
+    "attributes": {
+      "name": "GDP per capita (current US$)",
+      "slug": "GDP-per-capita-current-USdollar-1490086842131",
+      "type": null,
+      "subtitle": null,
+      "application": [
+        "data4sdgs"
+      ],
+      "dataPath": null,
+      "attributesPath": null,
+      "connectorType": "document",
+      "provider": "csv",
+      "userId": "58333dcfd9f39b189ca44c75",
+      "connectorUrl": "http://staging-api.globalforestwatch.org:8080/world_bank/GDP%20per%20capita%20(current%20US%24).csv",
+      "tableName": "index_03a8da41d8d040958fd5267a25d5fc31",
+      "status": "saved",
+      "published": true,
+      "overwrite": false,
+      "verified": false,
+      "blockchain": {},
+      "mainDateField": null,
+      "env": "production",
+      "geoInfo": false,
+      "protected": false,
+      "legend": {
+        "date": [],
+        "region": [],
+        "country": [],
+        "nested": []
+      },
+      "clonedHost": {},
+      "errorMessage": null,
+      "taskId": null,
+      "updatedAt": "2017-01-19T10:34:32.524Z",
+      "dataLastUpdated": null,
+      "widgetRelevantProps": [],
+      "layerRelevantProps": []
+    }
+  },
+  {
+    "id": "03cbbe91-3c9b-443e-8210-b3b547e27cc9",
+    "type": "dataset",
+    "attributes": {
+      "name": "Reservations -- U.S. (Alaska)",
+      "slug": "Reservations-US-Alaska-1490086842538",
+      "type": "tabular",
+      "subtitle": null,
+      "application": [
+        "prep"
+      ],
+      "dataPath": null,
+      "attributesPath": null,
+      "connectorType": "rest",
+      "provider": "featureservice",
+      "userId": "586bc76036aacd381cb92b3a",
+      "connectorUrl": "https://map11.epa.gov/arcgis/rest/services/EMEF/tribal/MapServer/2?f=pjson",
+      "tableName": "EMEFtribalMapServer2",
+      "status": "saved",
+      "published": false,
+      "overwrite": false,
+      "verified": false,
+      "blockchain": {},
+      "mainDateField": null,
+      "env": "production",
+      "geoInfo": false,
+      "protected": false,
+      "legend": {
+        "date": [],
+        "region": [],
+        "country": [],
+        "nested": []
+      },
+      "clonedHost": {},
+      "errorMessage": null,
+      "taskId": null,
+      "updatedAt": "2018-01-03T17:31:20.666Z",
+      "dataLastUpdated": null,
+      "widgetRelevantProps": [],
+      "layerRelevantProps": []
+    }
+  },
+  {
+    "id": "0b9f0100-ce5b-430f-ad8f-3363efa05481",
+    "type": "dataset",
+    "attributes": {
+      "name": "soc.001 Environmental Democracy Index",
+      "slug": "Environmental-Democracy-Index-1490086842552",
+      "type": "tabular",
+      "subtitle": null,
+      "application": [
+        "rw"
+      ],
+      "dataPath": null,
+      "attributesPath": null,
+      "connectorType": "rest",
+      "provider": "cartodb",
+      "userId": "57a0aa1071e394dd32ffe137",
+      "connectorUrl": "https://insights.carto.com/tables/edi/public",
+      "tableName": "edi",
+      "status": "saved",
+      "published": true,
+      "overwrite": false,
+      "verified": false,
+      "blockchain": {},
+      "subscribable": {},
+      "mainDateField": null,
+      "env": "production",
+      "geoInfo": true,
+      "protected": false,
+      "legend": {
+        "date": [],
+        "region": [],
+        "country": [],
+        "nested": []
+      },
+      "clonedHost": {},
+      "errorMessage": null,
+      "taskId": null,
+      "updatedAt": "2019-02-12T20:24:22.935Z",
+      "dataLastUpdated": null,
+      "widgetRelevantProps": [
+        "country",
+        "region",
+        "access_to_info_score",
+        "justice_pillar_score",
+        "overall_score",
+        "participation_pillar_score"
+      ],
+      "layerRelevantProps": [
+        "the_geom",
+        "the_geom_webmercator",
+        "country",
+        "region",
+        "access_to_info_score",
+        "justice_pillar_score",
+        "limited_practice",
+        "no_practice",
+        "overall_score",
+        "participation_pillar_score",
+        "yes_practice",
+        "yes_and_limted_combined"
+      ]
+    }
+  }
+]

@@ -1,8 +1,14 @@
 {
-    "logger": {
-        "name": "doc-writter-test",
-        "level": "debug",
-        "toFile": false,
-        "dirLogFile": null
-    }
+  "logger": {
+    "name": "doc-executor-test",
+    "level": "debug",
+    "toFile": false,
+    "dirLogFile": null
+  },
+  "queues": {
+    "executorTasks": "DOC-EXECUTOR-TASKS-TEST",
+    "data": "DOC-DATA-TEST",
+    "status": "DOC-STATUS-TEST",
+    "tasks": "DOC-TASKS-TEST"
+  }
 }

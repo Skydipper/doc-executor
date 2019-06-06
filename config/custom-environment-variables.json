@@ -1,12 +1,17 @@
 {
-    "service": {
-        "port": "PORT"
-    },
-    "rabbitmq":{
-        "url": "RABBITMQ_URL"
-    },
-    "elastic":{
-        "url": "ELASTIC_URL"
-    },
-    "stampery": "STAMPERY_TOKEN"
+  "service": {
+    "port": "PORT"
+  },
+  "rabbitmq": {
+    "url": "RABBITMQ_URL"
+  },
+  "elastic": {
+    "url": "ELASTIC_URL"
+  },
+  "stampery": "STAMPERY_TOKEN",
+  "messageRetries": "MESSAGE_RETRIES",
+  "retryDelay": "RETRY_DELAY",
+  "logger": {
+    "level": "LOGGER_LEVEL"
+  }
 }

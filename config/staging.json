@@ -5,5 +5,5 @@
         "toFile": false,
         "dirLogFile": null
     },
-    "elementPerPackage": 10000
+    "elementPerPackage": 40000
 }

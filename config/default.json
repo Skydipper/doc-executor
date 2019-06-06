@@ -1,13 +1,21 @@
 {
-     "logger": {
-        "name": "doc-executor-DEV",
-        "level": "debug",
-        "toFile": false,
-        "dirLogFile": null
-    },
-    "service": {
-        "name": "Doc executor"
-    },
-    "stampery": "",
-    "elementPerPackage": 40000
+  "logger": {
+    "name": "doc-executor-DEV",
+    "level": "debug",
+    "toFile": false,
+    "dirLogFile": null
+  },
+  "service": {
+    "name": "Doc executor"
+  },
+  "stampery": "",
+  "elementPerPackage": 40000,
+  "messageRetries": 10,
+  "retryDelay": 2000,
+  "queues": {
+    "executorTasks": "DOC-EXECUTOR-TASKS",
+    "data": "DOC-DATA",
+    "status": "DOC-STATUS",
+    "tasks": "DOC-TASKS"
+  }
 }

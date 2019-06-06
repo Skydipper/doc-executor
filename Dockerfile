@@ -1,5 +1,5 @@
 FROM node:9.1-alpine
-MAINTAINER raul.requero@vizzuality.com
+MAINTAINER info@vizzuality.com
 
 ENV NAME doc-executor
 ENV USER doc-executor
@@ -9,7 +9,7 @@ RUN apk update && apk upgrade && \
 
 RUN addgroup $USER && adduser -s /bin/bash -D -G $USER $USER
 
-RUN npm install --unsafe-perm -g grunt-cli bunyan 
+RUN npm install --unsafe-perm -g grunt-cli bunyan
 
 RUN mkdir -p /opt/$NAME
 COPY package.json /opt/$NAME/package.json

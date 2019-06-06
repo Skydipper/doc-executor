@@ -6,6 +6,7 @@ const DownloadService = require('services/downloadService');
 const FileNotFound = require('errors/fileNotFound');
 
 class JSONConverter {
+
     constructor(url, dataPath, verify) {
         logger.debug(`Creating jsonConverter with url ${url} and dataPath ${dataPath}`);
         this.dataPath = dataPath ? `${dataPath}.*` : '*';
@@ -22,7 +23,7 @@ class JSONConverter {
     async init() {
         if (this.checkURL.test(this.url)) {
             logger.debug('Is a url. Downloading file in url ', this.url);
-            const result = await DownloadService.downloadFile(this.url, randomstring.generate() + '.json', this.verify);
+            const result = await DownloadService.downloadFile(this.url, `${randomstring.generate()}.json`, this.verify);
             this.filePath = result.path;
             this.sha256 = result.sha256;
             logger.debug('Temporal path ', this.filePath);

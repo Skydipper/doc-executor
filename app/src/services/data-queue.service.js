@@ -1,23 +1,17 @@
 const logger = require('logger');
 const config = require('config');
 const amqp = require('amqplib');
-const docImporter = require('doc-importer-messages');
+const docImporterMessages = require('rw-doc-importer-messages');
 const StatusQueueService = require('services/status-queue.service');
-const {
-    promisify
-} = require('util');
-const {
-    DATA_QUEUE
-} = require('app.constants');
 
 
 class DataQueueService {
 
     constructor() {
-        logger.info(`Connecting to queue ${DATA_QUEUE}`);
+        logger.info(`Connecting to queue ${config.get('queues.data')}`);
         try {
             this.init().then(() => {
-                logger.info('Connected');
+                logger.info('[Data Queue] Connected');
             }, (err) => {
                 logger.error(err);
                 process.exit(1);
@@ -33,29 +27,29 @@ class DataQueueService {
     }
 
     async sendMessage(msg) {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             const interval = setInterval(async () => {
                 try {
-                    logger.info('Sending message');
-                    const data = await this.channel.assertQueue(DATA_QUEUE, {
+                    logger.info('[Data Queue] Sending message');
+                    const data = await this.channel.assertQueue(config.get('queues.data'), {
                         durable: true
                     });
                     if (data.count > 100) {
                         throw new Error('Full queue');
                     }
-                    this.channel.sendToQueue(DATA_QUEUE, Buffer.from(JSON.stringify(msg)));
+                    this.channel.sendToQueue(config.get('queues.data'), Buffer.from(JSON.stringify(msg)));
                     clearInterval(interval);
                     resolve();
                 } catch (err) {
-                    logger.error('Error sending message (try again in 2 second)', err);
+                    logger.error('[Data Queue] Error sending message (try again in 2 second)', err);
                 }
             }, 2000);
         });
     }
 
     async sendDataMessage(taskId, index, data) {
-        logger.debug(`Sending data message (${data.length})`);
-        await this.sendMessage(docImporter.data.createMessage(docImporter.data.MESSAGE_TYPES.DATA, {
+        logger.debug(`[Data Queue] Sending data message (${data.length})`);
+        await this.sendMessage(docImporterMessages.data.createMessage(docImporterMessages.data.MESSAGE_TYPES.DATA, {
             taskId,
             index,
             data

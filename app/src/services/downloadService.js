@@ -1,5 +1,3 @@
-'use strict';
-
 const requestPromise = require('request-promise');
 const fs = require('fs');
 const logger = require('logger');
@@ -26,7 +24,7 @@ function humanFileSize(bytes, si) {
 
 const requestDownloadFile = function (url, path, verify) {
 
-    return new Bluebird(function (resolve, reject) {
+    return new Bluebird((resolve, reject) => {
         logger.debug('Sending request');
         try {
             let dlprogress = 0;
@@ -37,8 +35,8 @@ const requestDownloadFile = function (url, path, verify) {
             } else {
                 requestserver = http.request(url);
             }
-            requestserver.addListener('response', function (response) {
-                let downloadfile = fs.createWriteStream(path, {
+            requestserver.addListener('response', (response) => {
+                const downloadfile = fs.createWriteStream(path, {
                     flags: 'a'
                 });
                 logger.info(`File size: ${humanFileSize(parseInt(response.headers['content-length'], 10))}`);
@@ -46,7 +44,7 @@ const requestDownloadFile = function (url, path, verify) {
                 if (verify) {
                     shasum = crypto.createHash(algorithm);
                 }
-                response.addListener('data', function (chunk) {
+                response.addListener('data', chunk => {
                     if (verify) {
                         shasum.update(chunk);
                     }
@@ -59,7 +57,7 @@ const requestDownloadFile = function (url, path, verify) {
                         oldProgress = dlprogress;
                     }
                 });
-                response.addListener('end', function () {
+                response.addListener('end', () => {
                     downloadfile.end();
                     logger.info(`${humanFileSize(dlprogress)} downloaded. Ended from server`);
                     if (verify) {
@@ -70,7 +68,7 @@ const requestDownloadFile = function (url, path, verify) {
                     }
 
                 });
-                response.on('error', function (e) {
+                response.on('error', e => {
                     logger.error('Error downloading file', e);
                     reject(e);
                 });

@@ -5,7 +5,7 @@ case "$1" in
     develop)
         echo "Running Development Server"
         sleep 20
-        exec npm run dev | bunyan
+        exec npm start | bunyan
         ;;
     test)
         echo "Running Test"

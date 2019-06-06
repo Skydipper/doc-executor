@@ -9,7 +9,7 @@ class ElasticService {
 
     constructor() {
         const extendAPI = {
-            explain: function(opts, cb) {
+            explain: function (opts, cb) {
                 const call = (err, data) => {
                     if (data) {
                         try {
@@ -58,9 +58,7 @@ class ElasticService {
         const body = {
             mappings: {
                 [type]: {
-                    properties: {
-
-                    }
+                    properties: {}
                 }
             }
         };
@@ -76,20 +74,47 @@ class ElasticService {
                 type: 'geo_point'
             };
         }
+
         if (legend && legend.nested) {
-            for (let i = 0, length = legend.nested.length; i < length; i++) {
+            for (let i = 0, { length } = legend.nested; i < length; i++) {
                 body.mappings[type].properties[legend.nested[i]] = {
                     type: 'nested',
                     include_in_parent: true
                 };
             }
         }
+
+
+        const fieldTypeList = [
+            'integer',
+            'short',
+            'byte',
+            'double',
+            'float',
+            'half_float',
+            'scaled_float',
+            'boolean',
+            'binary',
+            'text',
+            'keyword'
+        ];
+
+        fieldTypeList.forEach((fieldType) => {
+            if (legend && legend[fieldType]) {
+                for (let i = 0, { length } = legend[fieldType]; i < length; i++) {
+                    body.mappings[type].properties[legend[fieldType][i]] = {
+                        type: fieldType
+                    };
+                }
+            }
+        })
+
         return new Promise((resolve, reject) => {
 
             this.client.indices.create({
                 index,
                 body
-            }, (err, res) => {
+            }, (err) => {
                 if (err) {
                     reject(new ElasticError(err));
                     return;
@@ -215,7 +240,7 @@ class ElasticService {
     async checkFinishTaskId(taskId) {
         return new Promise((resolve, reject) => {
             this.client.tasks.get({
-                taskId: taskId
+                taskId
             }, (err, data) => {
                 if (err) {
                     reject(err);
